@@ -10,7 +10,8 @@ class ProjectController extends Controller
 {
     public function index(){
 
-        $projects = Project::all();
+        $projects = Project::with('type', 'technologies')->paginate(5);
+        //$projects = Project::paginate(3);  //elementi per pagina (3) per la paginazione di molti elementi 
 
         return response()->json( [
             'success'=> 'true',

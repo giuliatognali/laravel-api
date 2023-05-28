@@ -25,4 +25,4 @@ use App\Http\Controllers\Api\ProjectController;
     ]);   
 }); */
 
-Route::get('test', [ProjectController::class, 'index']);     //vogliamo il controller dell'api in risposta a questa rotta
+Route::get('projects', [ProjectController::class, 'index']);     //vogliamo il controller dell'api in risposta a questa rotta
