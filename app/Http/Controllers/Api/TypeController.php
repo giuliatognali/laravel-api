@@ -16,4 +16,11 @@ class TypeController extends Controller
             'results' => $types
         ]);
     }
+    public function show(string $slug){
+        $type = Type::where('slug', $slug)->with('projects')->first();
+        return response()->json([
+            'success'=> true,
+            'results' => $type
+        ]);
+    }
 }
